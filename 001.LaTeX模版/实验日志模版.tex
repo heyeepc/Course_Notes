@@ -1,0 +1,93 @@
+\documentclass[11pt, a4paper]{article}
+
+% --- 基础设置 ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[margin=2.5cm]{geometry} % 页边距
+\usepackage{xeCJK} % 支持中文（请务必使用 XeLaTeX 编译器）
+
+% --- 图片与颜色 ---
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{float} % 用于固定图片位置 [H]
+
+% --- 代码块设置 (listings) ---
+\usepackage{listings}
+\definecolor{codegray}{rgb}{0.95,0.95,0.96}
+\definecolor{codeblack}{rgb}{0.1,0.1,0.1}
+
+\lstset{
+	backgroundcolor=\color{codegray},   
+	basicstyle=\ttfamily\small\color{codeblack},
+	breaklines=true,                    % 自动换行
+	captionpos=b,                       
+	commentstyle=\color{gray},
+	frame=single,                       % 代码框
+	framerule=0pt,
+	framesep=5pt,
+	keepspaces=true,
+	keywordstyle=\color{blue},
+	numbers=none,                       % 日志通常不需要行号，需要可改为 left
+	showspaces=false,                
+	showstringspaces=false,
+	showtabs=false,                  
+	tabsize=2
+}
+
+% --- 页码设置 ---
+\pagestyle{plain} % 简洁模式，仅在页脚显示页码
+
+% --- 文档信息 ---
+\title{\textbf{实验与配置日志：[项目名称]}}
+\author{记录人：YourName}
+\date{\today}
+
+\begin{document}
+	
+	\maketitle
+	
+	\section{环境说明}
+	在开始配置之前，当前系统环境如下：
+	\begin{itemize}
+		\item \textbf{OS:} Ubuntu 22.04 LTS
+		\item \textbf{Kernel:} 5.15.0
+	\end{itemize}
+	
+	---
+	
+	\section{配置步骤}
+	
+	\subsection{安装必要依赖}
+	首先执行更新并安装基础包：
+	
+	\begin{lstlisting}[language=bash]
+		sudo apt update && sudo apt upgrade -y
+		sudo apt install build-essential git -y
+	\end{lstlisting}
+	
+	\subsection{修改配置文件}
+	编辑 \texttt{/etc/example.conf} 文件，确保以下参数已更改：
+	
+	\begin{lstlisting}
+		# Example Configuration
+		SERVER_PORT=8080
+		ENABLE_LOG=true
+	\end{lstlisting}
+	
+	\section{结果验证}
+	配置完成后，运行截图如下所示：
+	
+	% 插入图片示例
+	% \begin{figure}[H]
+		%     \centering
+		%     \includegraphics[width=0.8\textwidth]{screenshot.png} 
+		%     \caption{运行结果截图}
+		% \end{figure}
+	
+	\section{遇到问题与解决}
+	\begin{enumerate}
+		\item \textbf{问题：} 权限不足。
+		\item \textbf{解决：} 使用 \texttt{sudo} 提升权限。
+	\end{enumerate}
+	
+\end{document}
